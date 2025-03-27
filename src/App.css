@@ -1,0 +1,23 @@
+.app-container {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 240px;
+    flex-shrink: 0;
+}
+
+    .sidebar .MuiDrawer-paper {
+        width: 240px;
+        position: relative;
+    }
+
+.content {
+    flex-grow: 1;
+    height: 100vh;
+    overflow: auto;
+    padding: 0;
+    margin-top: 0; /* Navbar boþluðunu kaldýrýr */
+}
