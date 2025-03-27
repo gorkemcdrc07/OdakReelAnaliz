@@ -6,7 +6,6 @@ const WebSocket = require("ws");
 
 const app = express();
 
-// 🌍 CORS Politikası: Herkese açık hale getirdik, güvenlik için daha sonra domain bazlı kısıtlanabilir.
 app.use(cors({
     origin: "*",
     methods: ["GET", "POST"],
@@ -49,7 +48,7 @@ app.get("/proxy/tmsorders", (req, res) => {
 });
 
 // 📡 WebSocket kurulumu
-const PORT = 8080;
+const PORT = process.env.PORT || 8080; // 🌐 Render ile uyumlu hale getirildi
 const server = http.createServer(app);
 const wss = new WebSocket.Server({ server, path: "/ws" });
 
@@ -66,6 +65,5 @@ wss.on("connection", (ws) => {
 
 // 🚀 Sunucuyu başlat
 server.listen(PORT, () => {
-    console.log(`✅ HTTP + WebSocket sunucu çalışıyor: http://localhost:${PORT}`);
+    console.log(`✅ Sunucu ${PORT} portunda çalışıyor (Render uyumlu).`);
 });
-
