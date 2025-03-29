@@ -89,7 +89,7 @@ const MusteriSecimi = () => {
                 const endDate = endDateObj.toISOString().split(".")[0];
 
                 const body = { startDate, endDate, userId: 1 };
-                const response = await axios.post("http://localhost:8080/proxy/tmsorders", body);
+                const response = await axios.post(`${process.env.REACT_APP_API_URL}/proxy/tmsorders`, body);
                 const data = response.data.Data;
 
                 if (!Array.isArray(data)) {

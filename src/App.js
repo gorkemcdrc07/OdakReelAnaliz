@@ -17,6 +17,8 @@ const App = () => {
         { text: "Günlük Tedarik", icon: <FaChartLine />, page: "dashboard-new" },
         { text: "Tedarik Analiz", icon: <FaChartLine />, page: "169AylıkVeri" } // ✅ Yeni seçenek
     ];
+    console.log("API URL:", process.env.REACT_APP_API_URL);
+
 
     return (
         <div className="app-container">

@@ -97,7 +97,7 @@ const DashboardNew = () => {
                 const startDate = `${selectedISO}T00:00:00`;
                 const endDate = `${selectedISO}T23:59:59`;
 
-                const response = await axios.post("http://localhost:8080/proxy/tmsorders", {
+                const response = await axios.post("/proxy/tmsorders", {
                     startDate,
                     endDate,
                     userId: 1,
